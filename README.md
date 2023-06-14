@@ -6,7 +6,7 @@ Code will be available soon!
 
 If you find the code/data/paper interesting, please cite our paper!
 
-'''
+```
 @misc{bai2023sequential,
       title={Sequential Query Encoding For Complex Query Answering on Knowledge Graphs}, 
       author={Jiaxin Bai and Tianshi Zheng and Yangqiu Song},
@@ -15,4 +15,4 @@ If you find the code/data/paper interesting, please cite our paper!
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
-'''
+```
