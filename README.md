@@ -1,4 +1,4 @@
-# SQE
+# Sequential Query Encoding (SQE)
 
 The official implementation for paper Sequential Query Encoding For Complex Query Answering on Knowledge Graphs [[Paper]](https://arxiv.org/pdf/2302.13114.pdf).
 
