@@ -16,12 +16,14 @@ During the running process, you can monitor the training process via tensorboard
 If you find the code/data/paper interesting, please cite our paper!
 
 ```
-@misc{bai2023sequential,
-      title={Sequential Query Encoding For Complex Query Answering on Knowledge Graphs}, 
+@article{
+      bai2023sequential,
+      title={Sequential Query Encoding for Complex Query Answering on Knowledge Graphs},
       author={Jiaxin Bai and Tianshi Zheng and Yangqiu Song},
+      journal={Transactions on Machine Learning Research},
+      issn={2835-8856},
       year={2023},
-      eprint={2302.13114},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+      url={https://openreview.net/forum?id=ERqGqZzSu5},
+      note={}
 }
 ```
