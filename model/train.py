@@ -464,11 +464,7 @@ if __name__ == "__main__":
                 entailment_unseen_29_types_logs = log_aggregation(entailment_unseen_29_types_logs)
                 generalization_unseen_29_types_logs = log_aggregation(generalization_unseen_29_types_logs)
 
-                for key, value in entailment_58_types_logs.items():
-                    test_summary_writer.add_scalar("x-valid-58-types-" + key, value, global_steps)
-
-                for key, value in generalization_58_types_logs.items():
-                    test_summary_writer.add_scalar("x-valid-58-types-" + key, value, global_steps)
+                
 
                 for key, value in entailment_29_types_logs.items():
                     test_summary_writer.add_scalar("x-valid-29-types-" + key, value, global_steps)
@@ -481,6 +477,15 @@ if __name__ == "__main__":
 
                 for key, value in generalization_unseen_29_types_logs.items():
                     test_summary_writer.add_scalar("x-valid-unseen-29-types-" + key, value, global_steps)
+
+
+                for key, _ in entailment_58_types_logs.items():
+                    macro_average = (entailment_29_types_logs[key] + entailment_unseen_29_types_logs[key]) / 2
+                    test_summary_writer.add_scalar("x-valid-58-types-" + key, macro_average, global_steps)
+
+                for key, _ in generalization_58_types_logs.items():
+                    macro_average = (generalization_29_types_logs[key] + generalization_unseen_29_types_logs[key]) / 2
+                    test_summary_writer.add_scalar("x-valid-58-types-" + key, macro_average, global_steps)
 
                 
                 print("====== Test ======", model_name)
@@ -579,11 +584,13 @@ if __name__ == "__main__":
                 entailment_unseen_29_types_logs = log_aggregation(entailment_unseen_29_types_logs)
                 generalization_unseen_29_types_logs = log_aggregation(generalization_unseen_29_types_logs)
 
-                for key, value in entailment_58_types_logs.items():
-                    test_summary_writer.add_scalar("x-test-58-types-" + key, value, global_steps)
+                for key, _ in entailment_58_types_logs.items():
+                    macro_average = (entailment_29_types_logs[key] + entailment_unseen_29_types_logs[key]) / 2
+                    test_summary_writer.add_scalar("x-test-58-types-" + key, macro_average, global_steps)
 
-                for key, value in generalization_58_types_logs.items():
-                    test_summary_writer.add_scalar("x-test-58-types-" + key, value, global_steps)
+                for key, _ in generalization_58_types_logs.items():
+                    macro_average = (generalization_29_types_logs[key] + generalization_unseen_29_types_logs[key]) / 2
+                    test_summary_writer.add_scalar("x-test-58-types-" + key, macro_average, global_steps)
 
                 for key, value in entailment_29_types_logs.items():
                     test_summary_writer.add_scalar("x-test-29-types-" + key, value, global_steps)
